@@ -1,5 +1,7 @@
 package br.com.orange.casadocodigo.entity;
 
+import br.com.orange.casadocodigo.controller.validator.autor.EmailUnicoConstraint;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -19,6 +21,7 @@ public class Autor {
 
     @NotBlank
     @Email
+    @EmailUnicoConstraint
     private String email;
 
     @NotBlank

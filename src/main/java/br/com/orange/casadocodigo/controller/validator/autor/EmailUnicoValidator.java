@@ -1,4 +1,4 @@
-package br.com.orange.casadocodigo.controller.validator;
+package br.com.orange.casadocodigo.controller.validator.autor;
 
 import br.com.orange.casadocodigo.entity.Autor;
 import br.com.orange.casadocodigo.repository.AutorRepository;

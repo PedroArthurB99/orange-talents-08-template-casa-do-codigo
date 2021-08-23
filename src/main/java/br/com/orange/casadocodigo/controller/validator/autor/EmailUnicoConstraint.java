@@ -1,4 +1,4 @@
-package br.com.orange.casadocodigo.controller.validator;
+package br.com.orange.casadocodigo.controller.validator.autor;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

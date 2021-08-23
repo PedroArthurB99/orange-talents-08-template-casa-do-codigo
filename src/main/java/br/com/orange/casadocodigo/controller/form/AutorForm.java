@@ -1,6 +1,6 @@
 package br.com.orange.casadocodigo.controller.form;
 
-import br.com.orange.casadocodigo.controller.validator.EmailUnicoConstraint;
+import br.com.orange.casadocodigo.controller.validator.autor.EmailUnicoConstraint;
 import br.com.orange.casadocodigo.entity.Autor;
 
 import javax.validation.constraints.Email;
