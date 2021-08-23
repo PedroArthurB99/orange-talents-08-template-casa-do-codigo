@@ -1,5 +1,6 @@
 package br.com.orange.casadocodigo.controller.form;
 
+import br.com.orange.casadocodigo.controller.validator.EmailUnicoConstraint;
 import br.com.orange.casadocodigo.entity.Autor;
 
 import javax.validation.constraints.Email;
@@ -14,6 +15,7 @@ public class AutorForm {
 
     @NotBlank
     @Email
+    @EmailUnicoConstraint
     private String email;
 
     @NotBlank

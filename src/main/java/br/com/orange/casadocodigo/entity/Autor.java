@@ -27,6 +27,9 @@ public class Autor {
 
     private LocalDateTime dataCadastro;
 
+    @Deprecated
+    public Autor() {}
+
     public Autor (String nome, String email, String descricao, LocalDateTime dataCadastro) {
         this.nome = nome;
         this.email = email;
