@@ -1,7 +1,5 @@
 package br.com.orange.casadocodigo.entity;
 
-import br.com.orange.casadocodigo.controller.validator.categoria.NomeUnicoConstraint;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -14,7 +12,6 @@ public class Categoria {
     private Long id;
 
     @NotBlank
-    @NomeUnicoConstraint
     private String nome;
 
     @Deprecated

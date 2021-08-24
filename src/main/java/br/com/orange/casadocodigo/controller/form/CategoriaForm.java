@@ -1,6 +1,6 @@
 package br.com.orange.casadocodigo.controller.form;
 
-import br.com.orange.casadocodigo.controller.validator.categoria.NomeUnicoConstraint;
+import br.com.orange.casadocodigo.controller.validator.CampoUnicoConstraint;
 import br.com.orange.casadocodigo.entity.Categoria;
 
 import javax.validation.constraints.NotBlank;
@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 public class CategoriaForm {
 
     @NotBlank
-    @NomeUnicoConstraint
+    @CampoUnicoConstraint(modelClass = Categoria.class, campo = "nome")
     private String nome;
 
     public Categoria toEntity() {
