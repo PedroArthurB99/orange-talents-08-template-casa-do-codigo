@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/livros")
@@ -42,5 +44,16 @@ public class LivroController {
         List<Livro> livros = this.repository.findAll();
         List<LivroListagemDTO> listagem = LivroListagemDTO.converterLista(livros);
         return ResponseEntity.ok(listagem);
+    }
+
+    @GetMapping("/{id}")
+    @Transactional
+    public ResponseEntity<?> detalhar(@PathVariable Long id) {
+        Optional<Livro> livro = this.repository.findById(id);
+        if (livro.isPresent()) {
+            return ResponseEntity.ok(new LivroDTO(livro.get()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
