@@ -1,5 +1,7 @@
 package br.com.orange.casadocodigo.controller.validator;
 
+import br.com.orange.casadocodigo.controller.exception.CampoUnicoException;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -28,6 +30,8 @@ public class CampoUnicoValidator implements ConstraintValidator<CampoUnicoConstr
         Query query = manager.createQuery("SELECT 1 FROM " + this.modelClass.getName() + " WHERE " + this.campo + "=:param")
             .setParameter("param", value);
         List<?> list = query.getResultList();
-        return list.size()==0;
+        if (!list.isEmpty()) { throw new CampoUnicoException(this.campo); }
+
+        return true;
     }
 }
