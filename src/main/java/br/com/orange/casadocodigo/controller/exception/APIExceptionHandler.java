@@ -49,3 +49,4 @@ public class APIExceptionHandler {
         return exception.getObjetoErroDTO();
     }
 }
+
